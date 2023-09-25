@@ -11,8 +11,8 @@ public class Shop {
 //        return toys;
 //    }
 
-    // 2. Добавить элементы в коллекцию java.util.PriorityQueue. Организовать общую
-    // очередь
+    // 2. Это очередь игрушек, выпавших в розыгрыше
+    // В отличие от List<Toy>toys может содержать игрушки с одним и тем же id
     private PriorityQueue<Toy> queueToys;
 
     public PriorityQueue<Toy> getQueueToys() {
