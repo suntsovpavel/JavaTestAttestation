@@ -20,7 +20,7 @@ public class Main {
                 System.out.println("Разыграна игрушка: " + shop.GetToy());
             }
 
-            //3. Получаем из shop сформированную очередь и записываем содержимое в файл:
+            //3. Получаем из shop сформированную очередь shop.getQueueToys() и записываем содержимое в файл:
             String pathFile = "toys.txt";
             FileWriter fw = new FileWriter(pathFile);
             BufferedWriter bw = new BufferedWriter(fw);
