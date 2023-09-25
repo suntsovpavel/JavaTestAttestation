@@ -10,7 +10,7 @@ public class Toy implements Comparable<Toy> {
         this.name = name;
 
         if (weight < 1 || weight > 99) {
-            throw new RuntimeException("Конструктор Toy: get weight out of range [1; 99]");
+            throw new RuntimeException("Конструктор Toy: set weight out of range [1; 99]");
         }
         this.weight = weight;
     }
