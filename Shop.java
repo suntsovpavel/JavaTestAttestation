@@ -16,7 +16,7 @@ public class Shop {
     // очередь
     private PriorityQueue<Toy> queueToys;
 
-    public PriorityQueue<Toy> getOueueToys() {
+    public PriorityQueue<Toy> getQueueToys() {
         return queueToys;
     }
 

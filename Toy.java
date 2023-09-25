@@ -32,9 +32,14 @@ public class Toy implements Comparable {
         return String.format("(id: %d, name: %s, weight: %d)", id, name, weight);
     }
 
-    // Этот метод не используется, но формально прописан для использования объектов класса в коллекциях
+    // Пишем свой компаратор, сначала по весу weight, затем по имени name
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(Object o){
+        int deltaWeigths = ((Toy) o).getWeight() - this.weight;
+        if(deltaWeigths == 0){
+            return this.getName().compareTo(((Toy) o).getName());
+        }else{
+            return deltaWeigths;
+        }
     }
 }
