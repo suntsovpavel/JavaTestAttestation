@@ -1,8 +1,7 @@
-public class Toy {
+public class Toy implements Comparable {
     private int id;
     private String name; // название игрушки
     private int weight; // вес = частота выпадения, условно от 1 до 100
-
     public Toy(int id, String name, int weight) throws RuntimeException {
         this.id = id;
         if (name.length() == 0) {
@@ -26,5 +25,16 @@ public class Toy {
 
     public int getWeight() {
         return weight;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("(id: %d, name: %s, weight: %d)", id, name, weight);
+    }
+
+    // Этот метод не используется, но формально прописан для использования объектов класса в коллекциях
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }

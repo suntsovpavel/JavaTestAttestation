@@ -12,8 +12,8 @@ public class Shop {
         return toys;
     }
 
-    // 2. Используя API коллекцию: java.util.PriorityQueue, добавить элементы в
-    // коллекцию. Организовать общую очередь
+    // 2. Добавить элементы в коллекцию java.util.PriorityQueue. Организовать общую
+    // очередь
     private PriorityQueue<Toy> queueToys;
 
     public PriorityQueue<Toy> getOueueToys() {
