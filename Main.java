@@ -9,11 +9,11 @@ public class Main {
             Shop shop = new Shop();
             int id = 0;
             // 1. Добавляем игрушки в коллекцию
-            shop.addNewToy(id++, "Кубик Рубика", 25);
+            shop.addNewToy(id++, "Кубик Рубика", 45);
             shop.addNewToy(id++, "Монополия", 50);
             shop.addNewToy(id++, "Конструктор", 50);
-            shop.addNewToy(id++, "Кукла Барби", 70);
-            shop.addNewToy(id++, "Елочка", 80);
+            shop.addNewToy(id++, "Кукла Барби", 55);
+            shop.addNewToy(id++, "Елочка", 55);
 
             // 2. Разыгрываем игрушки: вызываем метод GetToy 10 раз, согласно заданию
             for (int j = 0; j < 10; j++) {
@@ -34,10 +34,10 @@ public class Main {
             fw.close();
         }
         catch(IOException e){
-            System.out.println(e);
+            System.out.println(e.toString());
         }
         catch (RuntimeException e) {
-            System.out.println(e);
+            System.out.println(e.toString());
         }
     }
 }

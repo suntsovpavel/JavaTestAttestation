@@ -7,10 +7,9 @@ import java.util.PriorityQueue;
 public class Shop {
     // 1. Коллекция разыгрываемых игрушек
     private List<Toy> toys;
-
-    public List<Toy> getCollectionToys() {
-        return toys;
-    }
+//    public List<Toy> getCollectionToys() {
+//        return toys;
+//    }
 
     // 2. Добавить элементы в коллекцию java.util.PriorityQueue. Организовать общую
     // очередь
