@@ -50,7 +50,7 @@ public class Shop {
         for (Toy t : toys) {
             sumWeigths += t.getWeight();
             if (sumWeigths > randomValue) {
-                // Добавляем в коллекцию:
+                // Добавляем в очередь выдачи:
                 queueToys.add(t);
 
                 return t;
