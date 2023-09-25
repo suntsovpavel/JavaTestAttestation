@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.PriorityQueue;
 
 //магазин игрушек
 public class Shop {
@@ -11,17 +12,22 @@ public class Shop {
         return toys;
     }
 
+    // 2. Используя API коллекцию: java.util.PriorityQueue, добавить элементы в
+    // коллекцию. Организовать общую очередь
+    private PriorityQueue<Toy> queueToys;
+
+    public PriorityQueue<Toy> getOueueToys() {
+        return queueToys;
+    }
+
     public Shop() {
         toys = new ArrayList<>();
+        queueToys = new PriorityQueue<>();
     }
 
     // Добавляем новую игрушку в коллекцию разыгрываемых
-    public void addNewToy(Toy toy) throws RuntimeException {
-        if (toy.getMessageError() != null)
-            throw new RuntimeException(toy.getMessageError());
-
-        // Пополняем коллекцию
-        toys.add(toy);
+    public void addNewToy(int id, String name, int weight) throws RuntimeException {
+        toys.add(new Toy(id, name, weight));
     }
 
     // Разыгрываем игрушку
@@ -44,11 +50,14 @@ public class Shop {
         sumWeigths = 0;
         for (Toy t : toys) {
             sumWeigths += t.getWeight();
-            if (randomValue < sumWeigths) {
+            if (sumWeigths > randomValue) {
+                // Добавляем в коллекцию:
+                queueToys.add(t);
+
                 return t;
             }
         }
-        // Сюда добраться не должны
+        // Если добрались сюда, это ошибка
         throw new RuntimeException("Shop::GetToy(), ошибка алгоритма");
     }
 }

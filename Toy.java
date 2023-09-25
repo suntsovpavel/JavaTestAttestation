@@ -2,18 +2,16 @@ public class Toy {
     private int id;
     private String name; // название игрушки
     private int weight; // вес = частота выпадения, условно от 1 до 100
-    private String messageError; // сообщение-результат проверок в конструкторе. Если все ок, = null
 
-    public Toy(int id, String name, int weight) {
-        this.messageError = null;
+    public Toy(int id, String name, int weight) throws RuntimeException {
         this.id = id;
         if (name.length() == 0) {
-            messageError = "get empty name";
-            return;
+            throw new RuntimeException("Конструктор Toy: name.length() == 0");
         }
+        this.name = name;
+
         if (weight < 1 || weight > 99) {
-            messageError = "get weight out of range [1; 99]";
-            return;
+            throw new RuntimeException("Конструктор Toy: get weight out of range [1; 99]");
         }
         this.weight = weight;
     }
@@ -28,9 +26,5 @@ public class Toy {
 
     public int getWeight() {
         return weight;
-    }
-
-    public String getMessageError() {
-        return messageError;
     }
 }
