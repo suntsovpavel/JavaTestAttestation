@@ -5,14 +5,14 @@ import java.util.PriorityQueue;
 
 //магазин игрушек
 public class Shop {
-    // 1. Коллекция разыгрываемых игрушек
+    // 1. Коллекция разыгрываемых игрушек (каждая с уникальным id)
     private List<Toy> toys;
-//    public List<Toy> getCollectionToys() {
-//        return toys;
-//    }
+    public List<Toy> getCollectionToys() {
+        return toys;
+    }
 
-    // 2. Это очередь игрушек, выпавших в розыгрыше
-    // В отличие от List<Toy>toys может содержать игрушки с одним и тем же id
+    // 2. Это очередь игрушек, выпавших в розыгрыше из коллекции List<Toy> toys
+    // может содержать игрушки с одним и тем же id
     private PriorityQueue<Toy> queueToys;
 
     public PriorityQueue<Toy> getQueueToys() {

@@ -17,7 +17,7 @@ public class Main {
 
             // 2. Разыгрываем игрушки: вызываем метод GetToy 10 раз, согласно заданию
             for (int j = 0; j < 10; j++) {
-                System.out.println("Разыграна игрушка: " + shop.GetToy());
+                System.out.println("Разыграна игрушка: " + shop.GetToy().toString());
             }
 
             //3. Получаем из shop сформированную очередь shop.getQueueToys() и записываем содержимое в файл:
