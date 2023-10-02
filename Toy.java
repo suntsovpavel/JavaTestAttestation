@@ -32,7 +32,7 @@ public class Toy implements Comparable<Toy> {
         return String.format("(id: %d, name: %s, weight: %d)", id, name, weight);
     }
 
-    // Пишем свой компаратор, сначала по весу weight, затем по имени name
+    // Пишем свой метод сравнения, сначала по весу weight, затем по имени name
     @Override
     public int compareTo(Toy o){
         int deltaWeigths = o.getWeight() - this.weight;
